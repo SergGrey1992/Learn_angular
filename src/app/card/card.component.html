@@ -1,0 +1,18 @@
+<div class="card">
+  <h2>{{ title }}</h2>
+  <p>{{ text }}</p>
+  <p>{{ myInfo() }}</p>
+  <div class="buttons">
+    <button (click)="changeTitle()">Change title</button>
+    <button (click)="title = 'Serega not love jira'">Change title inline</button>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="title" (ngModelChange)="changeInput()">
+  </div>
+  <!--<div>
+    <input type="text" #myInput (input)="inputHandler(myInput.value)" [value]="title">
+  </div>-->
+<!--  <div>-->
+<!--    <img [src]='imgUrl'>-->
+<!--  </div>-->
+</div>

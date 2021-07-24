@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-export interface IPost {
+export interface Post {
   title: string
   text: string
-  id: number
+  id?: number
 }
 
 @Component({
@@ -13,17 +13,15 @@ export interface IPost {
 })
 export class AppComponent {
 
-  posts: Array<IPost> = []
+  posts: Array<Post> = [
+    {title: 'Хочу выучить Angular компоненты', text: 'Учу клмпоненты', id: 1},
+    {title: 'Следующий блок', text: 'Будет много чего', id: 2},
+  ]
 
-  constructor() {
-    this.posts = [
-      {title: 'Хочу выучить Angular компоненты', text: 'Учу клмпоненты', id: 1},
-      {title: 'Следующий блок', text: 'Будет много чего', id: 2},
-    ]
-
-
+  updatePosts(post: Post) {
+    this.posts.unshift(post)
+    //console.log('updatePosts', post)
   }
-
-
+  constructor() {}
 
 }

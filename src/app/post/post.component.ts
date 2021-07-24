@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { Post } from '../app.component';
-
+import {Component, ContentChild, ElementRef, Input, OnInit} from '@angular/core';
+import {Post} from '../app.component';
 
 @Component({
   selector: 'app-post',
@@ -8,13 +7,13 @@ import { Post } from '../app.component';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
+  @Input() post: Post
 
- @Input() post: Post
-
+  @ContentChild('info', {static: true}) infoRef: ElementRef
   constructor() {
   }
 
   ngOnInit(): void {
+    console.log(this.infoRef.nativeElement)
   }
-
 }
